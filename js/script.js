@@ -14,6 +14,8 @@ const guestFull = document.querySelector(".alert");
 const assignButton = document.querySelector(".assign");
 // targets list that will have guest name and dish
 const assignedItems = document.querySelector(".assigned-items");
+// fun GIF to display
+const footerGif = document.querySelector("footer");
 
 addGuestButton.addEventListener("click", function () {
   const guest = guestInput.value;
@@ -48,14 +50,14 @@ const updateGuestCount = function () {
 
 const assignItems = function () {
   const potluckItems = [
-    "a pasta dish",
-    "a vegetarian entree",
-    "salad",
-    "a meat entree",
-    "non-alcoholic beverages",
-    "alcoholic beverages",
-    "dessert",
-    "an appetizer"
+    "macaroni & cheese",
+    "roasted veggies",
+    "a garden salad",
+    "rotisserie chicken",
+    "mashed potatoes",
+    "biscuits",
+    "CAKE",
+    "chips & dip"
   ];
 
   const allGuests = document.querySelectorAll(".guest-list li");
@@ -68,11 +70,14 @@ const assignItems = function () {
     listItem.innerText = `${guest.innerText} is bringing ${randomPotluckItem}.`;
     assignedItems.append(listItem);
 
+    //prevents assigning duplicate items
     potluckItems.splice(randomPotluckIndex, 1);
   }
 };
 
 assignButton.addEventListener("click", function () {
+  //displays gif and h3 in footer
+  footerGif.classList.add("show-footer");
   assignItems();
   assignButton.disabled = true;
 });

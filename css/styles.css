@@ -19,6 +19,18 @@ body {
   background-image: #fff;
   font-family: "Open Sans", sans-serif;
   margin-top: 3rem;
+  background: linear-gradient(45deg, #ff6666, #ff9966, #ffff66, #66ff66);
+  background-size: 800% 300%;
+  animation: gradient 8s linear infinite;
+  animation-direction: alternate;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 .attendees {
@@ -142,9 +154,13 @@ input:focus {
   max-width: 400px;
 }
 
+.show-footer {
+  display: block;
+}
+
 footer {
   width: 100%;
-  padding: 2em 0;
+  padding: 1.75em 0;
 }
 @media screen and (min-width: 800px) {
   .container {
