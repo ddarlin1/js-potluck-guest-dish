@@ -17,7 +17,8 @@ const assignedItems = document.querySelector(".assigned-items");
 // fun GIF to display
 const footerGif = document.querySelector("footer");
 
-addGuestButton.addEventListener("click", function () {
+addGuestButton.addEventListener("click", function (e) {
+  e.preventDefault();
   const guest = guestInput.value;
   if (guest !== "") {
     addToList(guest);
